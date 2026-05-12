@@ -1,0 +1,327 @@
+/* =========================================
+   QuickBite Restaurant Page
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --orange: #ff6b2c;
+  --orange-dark: #ff5722;
+  --yellow: #ffc107;
+  --cream: #fdf7f2;
+  --white: #ffffff;
+  --dark: #1a1209;
+  --text: #5c4a3a;
+
+  --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 14px 35px rgba(0, 0, 0, 0.12);
+
+  --radius-lg: 30px;
+  --radius-md: 22px;
+
+  --transition: all 0.35s ease;
+}
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.restaurants-list {
+  min-height: 100vh;
+  background: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.restaurant-hero {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff7f0 0%,
+      #fff2e8 100%
+    );
+
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+/* =========================================
+   FLOATING ICONS
+========================================= */
+
+.restaurant-hero::before {
+  content:
+    "🍕 🍔 🍟 ☕ 🌮 🍩 🍜 🥤 🍕 🍔 🍟 ☕ 🌮 🍩 🍜 🥤";
+
+  position: absolute;
+
+  top: 110px;
+  left: 0;
+
+  width: 200%;
+
+  font-size: 52px;
+
+  opacity: 0.08;
+
+  white-space: nowrap;
+
+  animation: floatingFood 18s linear infinite;
+
+  z-index: 1;
+}
+
+@keyframes floatingFood {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================
+   RESTAURANT IMAGE
+========================================= */
+
+.restaurant-image {
+  position: relative;
+  z-index: 5;
+
+  width: 120px;
+  height: 120px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 5px solid var(--yellow);
+
+  background: white;
+
+  margin-bottom: 20px;
+
+  box-shadow:
+    0 0 0 8px rgba(255, 193, 7, 0.12),
+    0 12px 30px rgba(0,0,0,0.12);
+
+  transition: var(--transition);
+}
+
+.restaurant-image:hover {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   RESTAURANT NAME
+========================================= */
+
+.restaurant-name {
+  position: relative;
+  z-index: 5;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(2rem, 5vw, 3.5rem);
+
+  font-weight: 900;
+
+  color: var(--dark);
+
+  margin-bottom: 14px;
+
+  text-align: center;
+}
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.restaurant-category {
+  position: relative;
+  z-index: 5;
+
+  padding: 10px 22px;
+
+  border-radius: 100px;
+
+  background: linear-gradient(
+    135deg,
+    var(--yellow),
+    #ffd54f
+  );
+
+  color: var(--dark);
+
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  box-shadow:
+    0 8px 22px rgba(255, 193, 7, 0.22);
+}
+
+/* =========================================
+   MENU SECTION
+========================================= */
+
+.menu-section {
+  width: 90%;
+  margin: 70px auto 0;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.menu-heading {
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+
+  color: var(--dark);
+
+  margin-bottom: 45px;
+
+  position: relative;
+}
+
+.menu-heading::after {
+  content: "";
+
+  width: 75px;
+  height: 4px;
+
+  border-radius: 100px;
+
+  background: linear-gradient(
+    90deg,
+    var(--orange-dark),
+    var(--yellow)
+  );
+
+  display: block;
+
+  margin-top: 10px;
+}
+
+/* =========================================
+   MENU GRID
+========================================= */
+
+.menu-items-grid {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(260px, 280px)
+  );
+
+  justify-content: center;
+
+  gap: 30px;
+}
+
+/* =========================================
+   EMPTY TEXT
+========================================= */
+
+.menu-items-grid p {
+  text-align: center;
+  color: var(--text);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .restaurant-hero {
+    min-height: 360px;
+  }
+
+  .restaurant-hero::before {
+    font-size: 42px;
+    top: 120px;
+  }
+
+  .restaurant-image {
+    width: 95px;
+    height: 95px;
+  }
+
+  .restaurant-name {
+    font-size: 2.3rem;
+  }
+
+  .menu-section {
+    width: 92%;
+    margin-top: 55px;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(220px, 260px)
+    );
+  }
+}
+
+@media (max-width: 480px) {
+
+  .restaurant-hero {
+    min-height: 320px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+  }
+
+  .restaurant-hero::before {
+    font-size: 30px;
+    top: 115px;
+  }
+
+  .restaurant-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .restaurant-name {
+    font-size: 1.9rem;
+    padding: 0 10px;
+  }
+
+  .restaurant-category {
+    font-size: 0.68rem;
+    padding: 8px 16px;
+  }
+
+  .menu-heading {
+    font-size: 1.8rem;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: 1fr;
+  }
+}
