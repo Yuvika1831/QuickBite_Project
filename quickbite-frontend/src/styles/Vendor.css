@@ -1,0 +1,811 @@
+/* =========================================
+   QUICKBITE VENDOR DASHBOARD
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --orange: #ff6b2c;
+  --orange-dark: #ff5722;
+  --yellow: #ffc107;
+  --cream: #fdf7f2;
+  --white: #ffffff;
+  --dark: #1a1209;
+  --text: #5c4a3a;
+
+  --shadow-sm: 0 8px 20px rgba(0,0,0,0.06);
+  --shadow-md: 0 14px 35px rgba(0,0,0,0.10);
+
+  --radius-lg: 30px;
+  --radius-md: 22px;
+
+  --transition: all 0.35s ease;
+}
+
+/* =========================================
+   MAIN WRAPPER
+========================================= */
+
+.vendor-dashboard {
+  min-height: 100vh;
+
+  background: var(--cream);
+
+  padding: 70px 20px 80px;
+
+  overflow-x: hidden;
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.vendor-heading-wrapper {
+  text-align: center;
+
+  margin-bottom: 50px;
+}
+
+.vendor-dashboard h1 {
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(2.4rem, 5vw, 4rem);
+
+  color: var(--dark);
+
+  margin-bottom: 10px;
+
+  position: relative;
+}
+
+.vendor-dashboard h1::after {
+  content: "";
+
+  width: 90px;
+  height: 4px;
+
+  border-radius: 100px;
+
+  background: linear-gradient(
+    90deg,
+    var(--orange-dark),
+    var(--yellow)
+  );
+
+  display: block;
+
+  margin: 14px auto 0;
+}
+
+.vendor-heading-wrapper p {
+  color: var(--text);
+
+  font-size: 1rem;
+
+  margin-top: 10px;
+}
+
+/* =========================================
+   RESTAURANT INFO
+========================================= */
+
+.restaurant-info {
+  position: relative;
+
+  padding: 40px 20px 20px;
+
+  margin-bottom: 40px;
+
+  overflow: visible !important;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================
+   FLOATING ICONS
+========================================= */
+
+.restaurant-info::before {
+  content:
+    "🍕 🍔 🍟 ☕ 🌮 🍩 🍜 🥤 🍕 🍔 🍟 ☕ 🌮 🍩 🍜 🥤";
+
+  position: absolute;
+
+  top: 90px;
+  left: 0;
+
+  width: 200%;
+
+  white-space: nowrap;
+
+  font-size: 48px;
+
+  opacity: 0.06;
+
+  animation: floatingFood 18s linear infinite;
+}
+
+@keyframes floatingFood {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================
+   RESTAURANT IMAGE
+========================================= */
+
+.restaurant-info img {
+  position: relative;
+  z-index: 5;
+
+  width: 120px;
+  height: 120px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 5px solid var(--yellow);
+
+  background: white;
+
+  margin-bottom: 20px;
+
+  box-shadow:
+    0 0 0 8px rgba(255, 193, 7, 0.12),
+    0 12px 30px rgba(0,0,0,0.12);
+
+  transition: var(--transition);
+}
+
+.restaurant-info img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   RESTAURANT NAME
+========================================= */
+
+.restaurant-info h2 {
+  position: relative;
+  z-index: 5;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(2rem, 5vw, 3rem);
+
+  color: var(--dark);
+
+  margin-bottom: 14px;
+}
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.restaurant-info p.category {
+  position: relative;
+  z-index: 5;
+
+  padding: 10px 22px;
+
+  border-radius: 100px;
+
+  background: linear-gradient(
+    135deg,
+    var(--yellow),
+    #ffd54f
+  );
+
+  color: var(--dark);
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  box-shadow:
+    0 8px 22px rgba(255, 193, 7, 0.18);
+}
+
+/* =========================================
+   CHECKOUT TIME
+========================================= */
+
+.checkout-time {
+  margin-top: 18px;
+  margin-bottom: 24px;
+
+  padding: 12px 20px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 193, 7, 0.12);
+
+  font-weight: 700;
+
+  color: var(--dark);
+}
+
+.checkout-time span {
+  color: var(--orange-dark);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.add-more-btn,
+.menu-form button,
+.add-restaurant-form button,
+.add-menu-item-form button {
+
+  padding: 14px 24px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    var(--orange-dark),
+    var(--orange)
+  );
+
+  color: white;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 10px 25px rgba(255, 87, 34, 0.22);
+}
+
+.add-more-btn:hover,
+.menu-form button:hover,
+.add-restaurant-form button:hover,
+.add-menu-item-form button:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 30px rgba(255, 87, 34, 0.30);
+}
+
+/* =========================================
+   FORM WRAPPER
+========================================= */
+
+.form-wrapper {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top: 30px;
+
+  margin-bottom: 50px;
+
+  position: relative;
+
+  z-index: 9999;
+
+  overflow: visible !important;
+}
+
+/* =========================================
+   FORMS
+========================================= */
+
+.menu-form,
+.add-restaurant-form,
+.add-menu-item-form {
+
+  width: 100%;
+  max-width: 520px;
+
+  margin: auto;
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 28px;
+
+  box-shadow: var(--shadow-sm);
+
+  display: flex !important;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+
+  position: relative;
+
+  z-index: 99999;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.menu-form input,
+.add-restaurant-form input,
+.add-restaurant-form textarea,
+.add-menu-item-form input {
+
+  width: 100%;
+
+  padding: 14px 18px;
+
+  border-radius: 16px;
+
+  border: 2px solid transparent;
+
+  background: #fff8f4;
+
+  outline: none;
+
+  font-size: 15px;
+
+  transition: var(--transition);
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+.menu-form input:focus,
+.add-restaurant-form input:focus,
+.add-restaurant-form textarea:focus,
+.add-menu-item-form input:focus {
+
+  border-color: var(--orange);
+
+  background: white;
+
+  box-shadow:
+    0 0 0 5px rgba(255, 107, 44, 0.08);
+}
+
+.add-restaurant-form textarea {
+  min-height: 120px;
+
+  resize: vertical;
+}
+
+/* =========================================
+   FORM BUTTONS
+========================================= */
+
+.form-buttons {
+  display: flex;
+
+  gap: 14px;
+
+  margin-top: 10px;
+}
+
+.form-buttons button {
+  flex: 1;
+}
+
+.cancel-btn {
+  background: #ddd !important;
+
+  color: #222 !important;
+}
+
+/* =========================================
+   MENU SECTION
+========================================= */
+
+.menu-section {
+  width: 92%;
+
+  margin: 40px auto 0;
+}
+
+/* =========================================
+   MENU HEADING
+========================================= */
+
+.menu-heading {
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+
+  color: var(--dark);
+
+  margin-bottom: 45px;
+
+  position: relative;
+}
+
+.menu-heading::after {
+  content: "";
+
+  width: 75px;
+  height: 4px;
+
+  border-radius: 100px;
+
+  background: linear-gradient(
+    90deg,
+    var(--orange-dark),
+    var(--yellow)
+  );
+
+  display: block;
+
+  margin-top: 10px;
+}
+
+/* =========================================
+   MENU GRID
+========================================= */
+
+.menu-items-grid {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(260px, 280px)
+  );
+
+  justify-content: center;
+
+  gap: 30px;
+}
+
+/* =========================================
+   EMPTY STATES
+========================================= */
+
+.empty-menu,
+.empty-restaurant-box {
+
+  background: white;
+
+  border-radius: 28px;
+
+  padding: 45px 25px;
+
+  text-align: center;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.empty-menu h3,
+.empty-restaurant-box h2 {
+
+  font-family: 'Playfair Display', serif;
+
+  color: var(--dark);
+
+  margin-bottom: 12px;
+}
+
+.empty-menu p,
+.empty-restaurant-box p {
+
+  color: var(--text);
+
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   LOADER
+========================================= */
+
+.vendor-loader {
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 18px;
+}
+
+.loader-circle {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  border: 5px solid #ffe0b2;
+  border-top-color: var(--orange-dark);
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vendor-loader p {
+  color: var(--dark);
+
+  font-weight: 600;
+}
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.vendor-message {
+  min-height: 70vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  color: var(--dark);
+
+  text-align: center;
+
+  padding: 20px;
+}
+/* =========================================
+   MENU FORM SECTION
+========================================= */
+
+.menu-form-section {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin: 40px auto 70px;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+/* =========================================
+   ADD MENU FORM
+========================================= */
+
+.add-menu-item-form {
+  width: 100%;
+
+  max-width: 520px;
+
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.08);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+/* =========================================
+   FORM TITLE
+========================================= */
+
+.add-menu-item-form h3 {
+  text-align: center;
+
+  font-size: 1.5rem;
+
+  color: var(--dark);
+
+  margin-bottom: 10px;
+
+  font-family: 'Playfair Display', serif;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.add-menu-item-form input {
+  width: 100%;
+
+  padding: 15px 18px;
+
+  border-radius: 14px;
+
+  border: 2px solid #eee;
+
+  background: #fff8f4;
+
+  outline: none;
+
+  font-size: 15px;
+
+  transition: 0.3s ease;
+}
+
+.add-menu-item-form input:focus {
+  border-color: var(--orange);
+
+  background: white;
+
+  box-shadow:
+    0 0 0 4px rgba(255,107,44,0.08);
+}
+
+/* =========================================
+   FORM BUTTONS
+========================================= */
+
+.form-buttons {
+  display: flex;
+
+  gap: 14px;
+
+  margin-top: 10px;
+}
+
+.form-buttons button {
+  flex: 1;
+}
+
+.cancel-btn {
+  background: #e0e0e0 !important;
+
+  color: #222 !important;
+
+  box-shadow: none !important;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .menu-form-section {
+    margin-top: 30px;
+  }
+
+  .add-menu-item-form {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .add-menu-item-form {
+    padding: 20px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+}
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .restaurant-info::before {
+    font-size: 38px;
+
+    top: 110px;
+  }
+
+  .restaurant-info img {
+    width: 95px;
+    height: 95px;
+  }
+
+  .restaurant-info h2 {
+    font-size: 2rem;
+  }
+
+  .restaurant-info p.category {
+    font-size: 0.68rem;
+
+    padding: 8px 18px;
+  }
+
+  .menu-form,
+  .add-restaurant-form,
+  .add-menu-item-form {
+
+    padding: 22px;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(220px, 260px)
+    );
+  }
+}
+
+@media (max-width: 480px) {
+
+  .vendor-dashboard {
+    padding: 60px 14px;
+  }
+
+  .vendor-dashboard h1 {
+    font-size: 2.3rem;
+  }
+
+  .restaurant-info::before {
+    font-size: 28px;
+
+    top: 115px;
+  }
+
+  .restaurant-info img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .restaurant-info h2 {
+    font-size: 1.7rem;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-form,
+  .add-restaurant-form,
+  .add-menu-item-form {
+
+    padding: 18px;
+  }
+
+  .add-more-btn,
+  .menu-form button,
+  .add-restaurant-form button,
+  .add-menu-item-form button {
+
+    width: 100%;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+}
