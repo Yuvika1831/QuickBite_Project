@@ -1,0 +1,109 @@
+/* Form Wrapper */
+.add-menu-item-form {
+  max-width: 400px;
+  width: 100%; /* take full width up to max-width */
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-sizing: border-box; /* Important: include padding in width */
+}
+
+/* Form Heading */
+.add-menu-item-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff416c;
+  font-weight: 600;
+}
+
+/* Input Fields */
+.add-menu-item-form input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+  box-sizing: border-box; /* Important: prevent overflow */
+}
+
+.add-menu-item-form input:focus {
+  border-color: #ff416c;
+  box-shadow: 0 0 5px rgba(255, 65, 108, 0.3);
+}
+
+/* Buttons Wrapper */
+.add-menu-item-form .form-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  justify-content: center; /* Center buttons horizontally */
+  margin-top: 10px;
+  flex-wrap: wrap; /* Wrap buttons if needed on small screens */
+}
+
+/* Main Buttons */
+.add-menu-item-form .form-buttons button {
+  flex: 1; /* Buttons take equal width */
+  min-width: 100px; /* Minimum width for small screens */
+  padding: 12px 0;
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.add-menu-item-form .form-buttons button:hover {
+  background: linear-gradient(90deg, #ff4b2b, #ff416c);
+}
+
+/* Cancel Button Styling */
+.add-menu-item-form .form-buttons .cancel-btn {
+  background: #ddd;
+  color: #333;
+}
+
+.add-menu-item-form .form-buttons .cancel-btn:hover {
+  background: #bbb;
+}
+
+/* Message (for errors or notifications) */
+.add-menu-item-form .message {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #ff4b2b;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .add-menu-item-form {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .add-menu-item-form input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .add-menu-item-form .form-buttons {
+    flex-direction: column; /* Stack buttons on mobile */
+  }
+
+  .add-menu-item-form .form-buttons button {
+    font-size: 15px;
+    padding: 10px 0;
+  }
+}
