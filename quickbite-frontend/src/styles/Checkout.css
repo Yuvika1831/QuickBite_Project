@@ -1,0 +1,125 @@
+/* =========================================
+   QUICKBITE CHECKOUT PAGE (PRO UI)
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --orange: #ff5722;
+  --orange-light: #ff7043;
+  --yellow: #ffc107;
+  --bg: #f9f6f2;
+  --card: #ffffff;
+  --text: #222;
+}
+
+/* PAGE */
+.checkout-container {
+  padding: 100px 20px 40px;
+  max-width: 700px;
+  margin: auto;
+  font-family: "DM Sans", sans-serif;
+  background: var(--bg);
+}
+
+/* TITLE */
+.checkout-title {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 25px;
+}
+
+/* CARD */
+.checkout-card {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin-bottom: 18px;
+}
+
+/* ITEMS */
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* COUPON */
+.coupon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.coupon-chip {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 20px;
+  background: #fff3e6;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* INPUTS */
+.checkout-card input,
+.checkout-card textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.checkout-card textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* COUPON APPLY */
+.coupon-input {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.coupon-input button {
+  padding: 8px 12px;
+  border: none;
+  background: var(--orange);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* TOTAL */
+.total {
+  color: var(--orange);
+  margin-top: 10px;
+}
+
+/* PLACE ORDER BUTTON */
+.place-order-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--orange), var(--yellow));
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.place-order-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* STATUS */
+.status {
+  text-align: center;
+  margin-top: 10px;
+}
