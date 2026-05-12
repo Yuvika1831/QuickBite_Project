@@ -1,0 +1,502 @@
+/* =========================================
+   QUICKBITE PROFILE PAGE
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --orange: #ff6b2c;
+  --orange-dark: #ff5722;
+  --yellow: #ffc107;
+  --cream: #fdf7f2;
+  --white: #ffffff;
+  --dark: #1a1209;
+  --text: #5c4a3a;
+
+  --shadow-sm: 0 8px 20px rgba(0,0,0,0.06);
+  --shadow-md: 0 14px 35px rgba(0,0,0,0.10);
+
+  --transition: all 0.35s ease;
+}
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.profile-page {
+  min-height: 100vh;
+
+  background: var(--cream);
+
+  padding: 70px 20px;
+
+  font-family: 'DM Sans', sans-serif;
+
+  overflow-x: hidden;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.profile-hero {
+  position: relative;
+
+  text-align: center;
+
+  margin-bottom: 50px;
+
+  overflow: hidden;
+}
+
+.profile-hero::before {
+  content:
+    "🍕 🍔 🍟 ☕ 🌮 🍩 🍜 🥤 🍕 🍔 🍟 ☕ 🌮 🍩 🍜 🥤";
+
+  position: absolute;
+
+  top: 30px;
+  left: 0;
+
+  width: 200%;
+
+  white-space: nowrap;
+
+  font-size: 46px;
+
+  opacity: 0.06;
+
+  animation: floatingFood 18s linear infinite;
+}
+
+@keyframes floatingFood {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================
+   AVATAR
+========================================= */
+
+.profile-avatar {
+  position: relative;
+  z-index: 5;
+
+  width: 110px;
+  height: 110px;
+
+  margin: auto auto 20px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    var(--orange-dark),
+    var(--yellow)
+  );
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2.6rem;
+  font-weight: 800;
+
+  box-shadow:
+    0 12px 30px rgba(255, 87, 34, 0.25);
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.profile-hero h1 {
+  position: relative;
+  z-index: 5;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+
+  color: var(--dark);
+
+  margin-bottom: 10px;
+}
+
+.profile-hero p {
+  position: relative;
+  z-index: 5;
+
+  color: var(--text);
+
+  font-size: 1rem;
+}
+
+/* =========================================
+   PROFILE CARD
+========================================= */
+
+.profile-card {
+  max-width: 700px;
+
+  margin: auto auto 50px;
+
+  background: white;
+
+  border-radius: 30px;
+
+  padding: 30px;
+
+  box-shadow: var(--shadow-sm);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.profile-info h2 {
+  font-size: 1.8rem;
+
+  color: var(--dark);
+
+  margin-bottom: 8px;
+}
+
+.profile-info p {
+  color: var(--text);
+}
+
+/* =========================================
+   PREMIUM BUTTON
+========================================= */
+
+.premium-btn {
+  padding: 14px 24px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    var(--orange-dark),
+    var(--orange)
+  );
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 10px 25px rgba(255, 87, 34, 0.22);
+}
+
+.premium-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 30px rgba(255, 87, 34, 0.30);
+}
+
+/* =========================================
+   ORDER SECTION
+========================================= */
+
+.orders-section {
+  max-width: 1100px;
+
+  margin: auto;
+}
+
+/* =========================================
+   ORDER HEADING
+========================================= */
+
+.orders-heading {
+  font-family: 'Playfair Display', serif;
+
+  font-size: 2.2rem;
+
+  color: var(--dark);
+
+  margin-bottom: 35px;
+
+  position: relative;
+}
+
+.orders-heading::after {
+  content: "";
+
+  width: 70px;
+  height: 4px;
+
+  border-radius: 100px;
+
+  background: linear-gradient(
+    90deg,
+    var(--orange-dark),
+    var(--yellow)
+  );
+
+  display: block;
+
+  margin-top: 10px;
+}
+
+/* =========================================
+   ORDER GRID
+========================================= */
+
+.orders-grid {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+
+  gap: 25px;
+}
+
+/* =========================================
+   ORDER CARD
+========================================= */
+
+.order-card {
+  background: white;
+
+  border-radius: 26px;
+
+  padding: 24px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition);
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+}
+
+.order-top {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+}
+
+.order-top h3 {
+  color: var(--dark);
+
+  font-size: 1.2rem;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.order-status {
+  padding: 8px 14px;
+
+  border-radius: 100px;
+
+  background: rgba(255, 193, 7, 0.15);
+
+  color: var(--orange-dark);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   ORDER DETAILS
+========================================= */
+
+.order-details p {
+  margin-bottom: 10px;
+
+  color: var(--text);
+}
+
+.order-details ul {
+  padding-left: 18px;
+
+  margin-top: 10px;
+}
+
+.order-details li {
+  margin-bottom: 8px;
+
+  color: var(--dark);
+}
+
+/* =========================================
+   EMPTY ORDERS
+========================================= */
+
+.empty-orders {
+  background: white;
+
+  border-radius: 30px;
+
+  padding: 50px 25px;
+
+  text-align: center;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.empty-orders h3 {
+  font-size: 1.7rem;
+
+  color: var(--dark);
+
+  margin-bottom: 12px;
+}
+
+.empty-orders p {
+  color: var(--text);
+}
+
+/* =========================================
+   LOADER
+========================================= */
+
+.profile-loader {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 18px;
+
+  background: var(--cream);
+}
+
+.loader-circle {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  border: 5px solid #ffe0b2;
+  border-top-color: var(--orange-dark);
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.profile-message {
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  background: var(--cream);
+
+  color: var(--dark);
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+.profile-message.error {
+  color: #e53935;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .profile-avatar {
+    width: 90px;
+    height: 90px;
+
+    font-size: 2rem;
+  }
+
+  .profile-card {
+    padding: 24px;
+
+    justify-content: center;
+
+    text-align: center;
+  }
+
+  .orders-heading {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .profile-page {
+    padding: 60px 14px;
+  }
+
+  .profile-hero::before {
+    font-size: 28px;
+    top: 55px;
+  }
+
+  .profile-avatar {
+    width: 75px;
+    height: 75px;
+
+    font-size: 1.7rem;
+  }
+
+  .profile-hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .orders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .premium-btn {
+    width: 100%;
+  }
+}
