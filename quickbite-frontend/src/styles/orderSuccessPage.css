@@ -1,0 +1,116 @@
+/* =========================================
+   QUICKBITE ORDER SUCCESS PAGE
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --orange: #ff5722;
+  --orange-light: #ff7043;
+  --yellow: #ffc107;
+  --bg: #f9f6f2;
+  --card: #ffffff;
+  --text: #222;
+}
+
+/* PAGE WRAPPER */
+.success-page {
+  min-height: 100vh;
+  padding: 110px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  font-family: "DM Sans", sans-serif;
+  background: linear-gradient(135deg, #fff3e6, #ffffff);
+  text-align: center;
+}
+
+/* MAIN TITLE */
+.success-page h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  color: var(--orange);
+  margin-bottom: 15px;
+}
+
+/* MESSAGE TEXT */
+.success-page p {
+  font-size: 16px;
+  color: #444;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* ORDER ID & TOTAL */
+.success-page h2 {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #333;
+}
+
+.success-page h3 {
+  margin-top: 10px;
+  color: var(--orange);
+  font-weight: 600;
+}
+
+/* STATUS BOX */
+.ready-notification {
+  margin-top: 20px;
+  padding: 12px 18px;
+  border-radius: 12px;
+
+  background: rgba(255, 87, 34, 0.1);
+  border: 1px solid rgba(255, 87, 34, 0.3);
+
+  color: var(--orange);
+  font-weight: 600;
+  max-width: 420px;
+
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* BUTTON */
+.success-page button {
+  margin-top: 30px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, var(--orange), var(--yellow));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(255, 87, 34, 0.25);
+}
+
+.success-page button:hover {
+  transform: translateY(-3px);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .success-page h1 {
+    font-size: 26px;
+  }
+
+  .success-page p {
+    font-size: 14px;
+  }
+}
