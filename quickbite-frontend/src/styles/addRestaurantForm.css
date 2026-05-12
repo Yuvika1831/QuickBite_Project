@@ -1,0 +1,160 @@
+/* =========================================
+   ADD RESTAURANT FORM (CLEAN AUTH STYLE)
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --orange: #FF5722;
+  --dark: #1A1209;
+  --cream: #FFF8F0;
+  --border: rgba(255, 87, 34, 0.15);
+  --shadow: 0 20px 60px rgba(26,18,9,0.18);
+  --radius: 22px;
+}
+
+/* FULL PAGE CENTER */
+.add-restaurant-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at top left, rgba(255,193,7,0.25), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(255,87,34,0.25), transparent 45%),
+    #FFF8F0;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.add-restaurant-form {
+  width: 380px;
+
+  background: rgba(255,255,255,0.8);
+
+  backdrop-filter: blur(12px);
+
+  border-radius: 22px;
+
+  padding: 32px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+
+  border: 1px solid rgba(255,87,34,0.15);
+
+  z-index: 2;
+  position: relative;
+}
+.floating-icons span {
+  position: absolute;
+
+  font-size: 2.3rem;
+
+  opacity: 0.12;
+
+  animation: floatUp 12s linear infinite;
+}
+
+.floating-icons span:nth-child(1) { left: 5%; }
+.floating-icons span:nth-child(2) { left: 15%; }
+.floating-icons span:nth-child(3) { left: 25%; }
+.floating-icons span:nth-child(4) { left: 35%; }
+.floating-icons span:nth-child(5) { left: 45%; }
+.floating-icons span:nth-child(6) { left: 55%; }
+.floating-icons span:nth-child(7) { left: 65%; }
+.floating-icons span:nth-child(8) { left: 75%; }
+.floating-icons span:nth-child(9) { left: 85%; }
+.floating-icons span:nth-child(10) { left: 95%; }
+
+@keyframes floatUp {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -20%;
+    transform: translateY(-120vh) rotate(360deg);
+  }
+}
+
+/* CARD */
+.add-restaurant-form {
+  width: 380px;
+
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  padding: 32px;
+
+  box-shadow: var(--shadow);
+
+  text-align: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* TITLE */
+.add-restaurant-form h2 {
+  font-family: 'Playfair Display', serif;
+
+  font-size: 1.9rem;
+
+  color: var(--dark);
+
+  margin-bottom: 18px;
+}
+
+/* FORM */
+.add-restaurant-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* INPUTS */
+.add-restaurant-form input {
+  padding: 12px;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(0,0,0,0.1);
+
+  outline: none;
+
+  font-size: 0.95rem;
+}
+
+.add-restaurant-form input:focus {
+  border-color: var(--orange);
+
+  box-shadow: 0 0 0 4px rgba(255,87,34,0.12);
+}
+
+/* BUTTON */
+.add-restaurant-form button {
+  padding: 12px;
+
+  border-radius: 100px;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  color: white;
+
+  background: linear-gradient(135deg, #1A1209, #FF5722);
+
+  transition: 0.3s ease;
+}
+
+.add-restaurant-form button:hover {
+  transform: translateY(-3px);
+}
