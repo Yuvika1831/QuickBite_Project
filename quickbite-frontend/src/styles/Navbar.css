@@ -1,0 +1,801 @@
+/* =========================================================
+   QUICKBITE PREMIUM NAVBAR
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --orange: #ff6b2c;
+  --orange-dark: #ff5722;
+  --yellow: #ffc107;
+  --cream: #fdf7f2;
+  --white: #ffffff;
+  --dark: #1a1209;
+  --text: #5c4a3a;
+
+  --shadow-sm: 0 8px 20px rgba(0,0,0,0.08);
+  --shadow-md: 0 14px 35px rgba(0,0,0,0.12);
+
+  --transition: all 0.35s ease;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 24px;
+
+  height: 72px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1000;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1A1209 0%,
+      #3D2B12 40%,
+      #FF5722 100%
+    );
+
+  box-shadow:
+    0 10px 30px rgba(26,18,9,0.35);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(10px);
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo a {
+  text-decoration: none;
+
+  font-size: 2rem;
+  font-weight: 900;
+
+  font-family: 'Playfair Display', serif;
+
+  color: white;
+
+  transition: var(--transition);
+}
+
+.logo a:hover {
+  color: var(--yellow);
+}
+
+/* =========================================================
+   CENTER LINKS
+========================================================= */
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar-center.active {
+  display: flex;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.78);
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  position: relative;
+
+  transition: var(--transition);
+}
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 2px;
+
+  border-radius: 100px;
+
+  background: var(--yellow);
+
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.nav-btn {
+  padding: 8px 16px;
+
+  border-radius: 100px;
+
+  border:
+    1px solid rgba(255,255,255,0.12);
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.nav-btn:hover {
+  background:
+    rgba(255,87,34,0.22);
+
+  transform: translateY(-2px);
+
+  border-color: rgba(255,255,255,0.25);
+}
+
+/* =========================================================
+   CART
+========================================================= */
+
+.cart-icon-wrapper {
+  position: relative;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  color: white;
+}
+
+.cart-icon-wrapper:hover {
+  transform: scale(1.1);
+
+  color: var(--yellow);
+}
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge {
+  position: absolute;
+
+  top: -7px;
+  right: -7px;
+
+  min-width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2px 5px;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+
+  color: var(--dark);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   NOTIFICATIONS
+========================================================= */
+
+.notification-wrapper {
+  position: relative;
+}
+
+.notification-dropdown {
+  position: absolute;
+
+  top: 52px;
+  right: 0;
+
+  width: 320px;
+
+  background: white;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.18);
+
+  border:
+    1px solid rgba(255,87,34,0.08);
+
+  z-index: 999;
+}
+
+.notification-item {
+  padding: 16px;
+
+  border-bottom:
+    1px solid rgba(0,0,0,0.06);
+
+  color: var(--dark);
+
+  font-size: 14px;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item p {
+  margin-top: 6px;
+
+  color: var(--text);
+}
+
+.notification-item button {
+  margin-top: 10px;
+  margin-right: 8px;
+
+  padding: 8px 12px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--orange-dark),
+      var(--orange)
+    );
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.notification-item button:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-icon {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--orange-dark),
+      var(--yellow)
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 8px 20px rgba(255,87,34,0.28);
+}
+
+.profile-icon:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.username {
+  color: rgba(255,255,255,0.85);
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.profile-overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.5);
+
+  backdrop-filter: blur(3px);
+
+  z-index: 9998;
+}
+
+/* =========================================================
+   PROFILE PANEL
+========================================================= */
+
+.profile-panel {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+
+  width: 400px;
+  height: 100vh;
+
+  padding: 24px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #FFFDF9 0%,
+      #FFF6ED 100%
+    );
+
+  border-left:
+    1px solid rgba(255,87,34,0.08);
+
+  box-shadow:
+    -10px 0 40px rgba(0,0,0,0.12);
+
+  z-index: 9999;
+
+  animation: slideInRight 0.35s ease;
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* =========================================================
+   FLOATING FOOD
+========================================================= */
+
+.profile-panel::before {
+  content:
+    "🍕 🍔 🍟 ☕ 🌮 🍩 🍜 🥤 🍕 🍔 🍟 ☕";
+
+  position: absolute;
+
+  top: 80px;
+  left: 0;
+
+  width: 200%;
+
+  font-size: 42px;
+
+  opacity: 0.05;
+
+  white-space: nowrap;
+
+  animation: floatingFood 18s linear infinite;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   PROFILE HEADER
+========================================================= */
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 28px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.profile-header h2 {
+  font-family: 'Playfair Display', serif;
+
+  font-size: 2rem;
+
+  color: var(--dark);
+}
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.close-btn {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--orange-dark),
+      var(--orange)
+    );
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 8px 18px rgba(255,87,34,0.28);
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* =========================================================
+   PROFILE INFO
+========================================================= */
+
+.profile-panel p {
+  color: var(--text);
+
+  font-size: 15px;
+
+  margin-bottom: 12px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.profile-panel strong {
+  color: var(--dark);
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.profile-panel h3 {
+  font-family: 'Playfair Display', serif;
+
+  color: var(--dark);
+
+  margin-top: 30px;
+  margin-bottom: 16px;
+
+  font-size: 1.5rem;
+
+  position: relative;
+  z-index: 2;
+}
+
+.profile-panel h3::after {
+  content: "";
+
+  width: 55px;
+  height: 4px;
+
+  border-radius: 100px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--orange-dark),
+      var(--yellow)
+    );
+
+  display: block;
+
+  margin-top: 8px;
+}
+
+/* =========================================================
+   MEMBERSHIP CARD
+========================================================= */
+
+.membership-card {
+  background: white;
+
+  padding: 18px;
+
+  border-radius: 22px;
+
+  box-shadow: var(--shadow-sm);
+
+  border:
+    1px solid rgba(255,87,34,0.08);
+
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   PANEL BUTTONS
+========================================================= */
+
+.profile-panel button {
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--orange-dark),
+      var(--orange)
+    );
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 10px 22px rgba(255,87,34,0.2);
+}
+
+.profile-panel button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 28px rgba(255,87,34,0.28);
+}
+
+/* =========================================================
+   ORDER CARD
+========================================================= */
+
+.order-card {
+  background: white;
+
+  margin-top: 16px;
+
+  padding: 18px;
+
+  border-radius: 22px;
+
+  border:
+    1px solid rgba(255,87,34,0.08);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition);
+
+  position: relative;
+  z-index: 2;
+}
+
+.order-card:hover {
+  transform: translateY(-4px);
+}
+
+.order-card p {
+  margin-bottom: 10px;
+}
+
+.order-card button {
+  width: 100%;
+
+  margin-top: 12px;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.profile-panel::-webkit-scrollbar {
+  width: 7px;
+}
+
+.profile-panel::-webkit-scrollbar-thumb {
+  background:
+    rgba(255,87,34,0.3);
+
+  border-radius: 100px;
+}
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.hamburger {
+  display: none;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  cursor: pointer;
+}
+
+.bar {
+  width: 24px;
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: white;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .navbar-center {
+    display: none;
+
+    position: absolute;
+
+    top: 72px;
+    left: 0;
+    right: 0;
+
+    background:
+      linear-gradient(
+        180deg,
+        #2A1B0E 0%,
+        #1A1209 100%
+      );
+
+    flex-direction: column;
+
+    padding: 22px;
+
+    gap: 20px;
+
+    border-bottom:
+      1px solid rgba(255,255,255,0.08);
+  }
+
+  .navbar-center.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .profile-panel {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .username {
+    display: none;
+  }
+
+  .notification-dropdown {
+    width: 290px;
+    right: -40px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .logo a {
+    font-size: 1.7rem;
+  }
+
+  .profile-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .profile-panel h3 {
+    font-size: 1.3rem;
+  }
+
+  .profile-panel::before {
+    font-size: 28px;
+  }
+
+  .notification-dropdown {
+    width: 260px;
+  }
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes slideInRight {
+
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatingFood {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
