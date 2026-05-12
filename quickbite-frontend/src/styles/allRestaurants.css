@@ -1,0 +1,320 @@
+/* =========================================
+   All Restaurants Page — QuickBite Theme
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   Variables
+========================= */
+:root {
+  --orange: #FF5722;
+  --orange-light: #FF7043;
+  --yellow: #FFC107;
+  --cream: #FFF8F0;
+  --dark: #1A1209;
+  --text-muted: #7A6652;
+  --border: rgba(255, 87, 34, 0.12);
+
+  --shadow-sm: 0 4px 16px rgba(26, 18, 9, 0.08);
+  --shadow-md: 0 10px 30px rgba(26, 18, 9, 0.14);
+  --shadow-lg: 0 18px 45px rgba(26, 18, 9, 0.18);
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================
+   Page Wrapper
+========================= */
+.all-restaurants-wrapper {
+  min-height: 100vh;
+  padding: 70px 5%;
+  background:
+    radial-gradient(circle at top right, rgba(255,193,7,0.12), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(255,87,34,0.10), transparent 35%),
+    var(--cream);
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* =========================
+   Heading
+========================= */
+.all-restaurants-wrapper h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 50px;
+  position: relative;
+  letter-spacing: -0.03em;
+}
+
+.all-restaurants-wrapper h1::after {
+  content: '';
+  width: 90px;
+  height: 5px;
+  border-radius: 100px;
+  background: linear-gradient(
+    135deg,
+    var(--orange),
+    var(--yellow)
+  );
+  display: block;
+  margin: 14px auto 0;
+}
+
+/* =========================
+   Loading
+========================= */
+.loading-text {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* =========================
+   Grid Layout
+========================= */
+.restaurant-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* =========================================
+   RestaurantCard Styling
+   (Works with existing RestaurantCard JSX)
+========================================= */
+
+.restaurant-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+
+  position: relative;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glow Effect */
+.restaurant-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background:
+    radial-gradient(circle at top left,
+      rgba(255,87,34,0.16),
+      transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.restaurant-card:hover::before {
+  opacity: 1;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255,87,34,0.35);
+  box-shadow: var(--shadow-lg);
+}
+
+/* =========================
+   Image Wrapper
+========================= */
+.restaurant-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.restaurant-card:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   Card Content
+========================= */
+.restaurant-card-content {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Restaurant Name */
+.restaurant-card h2,
+.restaurant-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dark);
+
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+/* Category */
+.restaurant-card p {
+  color: var(--orange);
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  margin-bottom: 14px;
+}
+
+/* =========================
+   Meta Row
+========================= */
+.restaurant-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  margin-bottom: 18px;
+}
+
+.meta-chip {
+  background: rgba(255,87,34,0.08);
+
+  color: var(--text-muted);
+
+  padding: 6px 10px;
+  border-radius: 100px;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* =========================
+   Button
+========================= */
+.restaurant-card button {
+  margin-top: auto;
+
+  padding: 10px 22px;
+
+  border: none;
+  border-radius: 100px;
+
+  background: linear-gradient(
+    135deg,
+    var(--orange),
+    var(--orange-light)
+  );
+
+  color: #fff;
+
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+
+  cursor: pointer;
+
+  transition: all var(--transition);
+
+  box-shadow: 0 6px 18px rgba(255,87,34,0.25);
+}
+
+.restaurant-card button:hover {
+  transform: translateY(-2px) scale(1.04);
+
+  box-shadow: 0 12px 28px rgba(255,87,34,0.35);
+}
+
+/* =========================
+   Empty State
+========================= */
+.no-restaurants {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.no-restaurants h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.no-restaurants p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 1024px) {
+  .restaurant-cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .restaurant-card img {
+    height: 190px;
+  }
+}
+
+@media (max-width: 768px) {
+  .all-restaurants-wrapper {
+    padding: 50px 20px;
+  }
+
+  .restaurant-cards-grid {
+    gap: 24px;
+  }
+
+  .restaurant-card img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .all-restaurants-wrapper h1 {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+
+  .restaurant-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant-card img {
+    height: 170px;
+  }
+
+  .restaurant-card button {
+    width: 100%;
+  }
+}
