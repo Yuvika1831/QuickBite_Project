@@ -22,7 +22,7 @@ const ChatbotButton = () => {
         localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:5000/api/chat",
+       `${process.env.REACT_APP_BACKEND_URL}/api/chat`,
         { message },
         {
           headers: {
